@@ -1,0 +1,20 @@
+---
+- name: Create hardened ssh client config
+  copy:
+    src: hardened_ssh_client.conf
+    dest: /etc/ssh/ssh_config.d/hardened_ssh_client.conf
+    owner: root
+    group: root
+    mode: 0644
+  notify:
+    - Restart sshd
+
+- name: Create default (hardened) ssh server config
+  copy:
+    src: hardened_ssh_server.conf
+    dest: /etc/ssh/sshd_config.d/hardened_ssh_server.conf
+    owner: root
+    group: root
+    mode: 0644
+  notify:
+    - Restart sshd

@@ -1,0 +1,11 @@
+galaxy_info:
+  author: Ofer Sadan
+  description: Hardening settings for ssh
+  company: Zero-ML
+  license: MIT
+  min_ansible_version: "2.9"
+  galaxy_tags: [ssh, security]
+  platforms:
+    - name: Ubuntu
+      versions:
+        - focal
