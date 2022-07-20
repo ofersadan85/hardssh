@@ -5,8 +5,8 @@
     state: directory
     mode: '0755'
   loop:
-    - /etc/ssh_config.d
-    - /etc/sshd_config.d
+    - /etc/ssh/ssh_config.d
+    - /etc/ssh/sshd_config.d
 
 - name: Ensure extended configs are included
   ansible.builtin.lineinfile:
