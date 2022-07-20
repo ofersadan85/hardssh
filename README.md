@@ -19,4 +19,4 @@ This is a simple role without variables
 To run it locally on your machine
 
     git clone https://github.com/ofersadan85/hardssh ./roles/hardssh
-    ansible localhost -m include_role -a name=hardssh
+    ansible localhost -m include_role -a name=hardssh --become
