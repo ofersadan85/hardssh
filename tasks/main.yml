@@ -1,6 +1,6 @@
 ---
 - name: Create hardened ssh client config
-  copy:
+  ansible.builtin.copy:
     src: hardened_ssh_client.conf
     dest: /etc/ssh/ssh_config.d/hardened_ssh_client.conf
     owner: root
@@ -10,7 +10,7 @@
     - Restart sshd
 
 - name: Create default (hardened) ssh server config
-  copy:
+  ansible.builtin.copy:
     src: hardened_ssh_server.conf
     dest: /etc/ssh/sshd_config.d/hardened_ssh_server.conf
     owner: root
