@@ -1,4 +1,21 @@
 ---
+- name: Create directories for extended configs
+  ansible.builtin.file:
+    path: "{{ item }}"
+    state: directory
+    mode: '0755'
+  loop:
+    - /etc/ssh_config.d
+    - /etc/sshd_config.d
+
+- name: Ensure extended configs are included
+  ansible.builtin.lineinfile:
+    path: "{{ item }}"
+    line: "Include {{ item }}.d/*.conf"
+  loop:
+    - /etc/ssh/ssh_config
+    - /etc/ssh/sshd_config
+
 - name: Create hardened ssh client config
   ansible.builtin.copy:
     src: hardened_ssh_client.conf
