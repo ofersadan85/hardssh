@@ -16,22 +16,15 @@
     - /etc/ssh/ssh_config
     - /etc/ssh/sshd_config
 
-- name: Create hardened ssh client config
+- name: Copy config files
   ansible.builtin.copy:
-    src: hardened_ssh_client.conf
-    dest: /etc/ssh/ssh_config.d/hardened_ssh_client.conf
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
     owner: root
     group: root
     mode: 0644
-  notify:
-    - Restart sshd
-
-- name: Create default (hardened) ssh server config
-  ansible.builtin.copy:
-    src: hardened_ssh_server.conf
-    dest: /etc/ssh/sshd_config.d/hardened_ssh_server.conf
-    owner: root
-    group: root
-    mode: 0644
+  loop:
+    - { src: client.conf, dest: /etc/ssh/ssh_config.d/hardened_ssh_client.conf }
+    - { src: server.conf, dest: /etc/ssh/sshd_config.d/hardened_ssh_server.conf }
   notify:
     - Restart sshd
