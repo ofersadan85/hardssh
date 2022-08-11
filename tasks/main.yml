@@ -12,6 +12,7 @@
   ansible.builtin.lineinfile:
     path: "{{ item }}"
     line: "Include {{ item }}.d/*.conf"
+    insertbefore: BOF
   loop:
     - /etc/ssh/ssh_config
     - /etc/ssh/sshd_config
