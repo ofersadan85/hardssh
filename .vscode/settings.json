@@ -1,5 +1,10 @@
 {
+    "yaml.schemas": {
+        "https://json.schemastore.org/github-workflow.json": "./.github/workflows/galaxy.yml",
+        "https://json.schemastore.org/dependabot-2.0.json": "./.github/dependabot.yml"
+    },
     "cSpell.words": [
-        "hardssh"
+        "hardssh",
+        "robertdebock"
     ]
 }
