@@ -19,4 +19,4 @@ This is a simple role without variables
 
 To run it locally on your machine
 
-    ansible localhost -m include_role -a name=hardssh --become -K  # Remove `-K` if your user does not need a password to sudo
+    ansible localhost -m include_role -a name=ofersadan85.hardssh --become -K  # Remove `-K` if your user does not need a password to sudo
