@@ -1,6 +1,7 @@
 # hardssh
 
-This ansible role will harden ssh settings (both client and server)
+This ansible role will harden ssh settings (both client and server).
+Test your SSH security settings with [https://www.sshaudit.com/](https://www.sshaudit.com/), the goal of this role is to always comply with a 100/100 score!
 
 ## Install
 
